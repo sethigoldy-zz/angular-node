@@ -16,10 +16,7 @@ app.use(cookieParser());
 
 if ('development' == app.get('env')) {
     // This will change in production since we'll be using the dist folder
-    app.use(express.static(path.join(__dirname, '../client/.tmp')));
-
-    // This covers serving up the index page
-    app.use(express.static(path.join(__dirname, '../client/app')));
+    app.use(express.static(path.join(__dirname, 'dist')));
 
     // This is the new way to handle errors in Express 4. not errorHandler().
     // For more about error-first best practices see http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/
@@ -33,7 +30,7 @@ if ('development' == app.get('env')) {
  * Production Settings
  */
 if ('production' == app.get('env')) {
-    app.use(express.static(path.join(__dirname, '/dist')));
+    app.use(express.static(path.join(__dirname, '../client/dist')));
 }
 
 /* Add this to fire the server */
