@@ -11,7 +11,7 @@ var app = express();
 app.use(favicon(path.join(__dirname, '../client/app', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 
 if ('development' == app.get('env')) {
