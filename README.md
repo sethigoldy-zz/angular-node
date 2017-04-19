@@ -8,3 +8,8 @@ npm install -g grunt-cli bower yo generator-karma generator-angular
 
 Run yo and start generator
 
+
+Run the server by going to server folder:
+
+node app.js
+
