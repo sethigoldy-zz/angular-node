@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('clientApp', [
+  .module('HrmApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
@@ -30,6 +30,16 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
+      .when('/signup', {
+        templateUrl: 'views/signup.html',
+        controller: 'SignupCtrl',
+        controllerAs: 'signup'
       })
       .otherwise({
         redirectTo: '/'
