@@ -21,20 +21,19 @@ if ('development' == app.get('env')) {
 //        console.log('Hellooooooooooooooooo!');
 //        res.send(200, 'working');
 //    });
-    app.post('/', (req, res) => {
-        var result=[];
-        MongoClient.connect(mongo_url+'/animals', function (err, db) {
+    app.get('/', (req, res) => {        
+        MongoClient.connect(mongo_url+'/hr', function (err, db) {
           if (err) throw err
 
-          db.collection('mammals').find().toArray(function (err, result2) {
+          db.collection('employee').find().toArray(function (err, result) {
             if (err) throw err
 
-            res.send(result2);
+            res.send(result);
           });
         });
         //res.send(result);
     });
-    app.use(express.static(path.join(__dirname, 'dist')));
+//    app.use(express.static(path.join(__dirname, 'dist')));
 
     // This is the new way to handle errors in Express 4. not errorHandler().
     // For more about error-first best practices see http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/
