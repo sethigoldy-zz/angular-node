@@ -7,15 +7,33 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
-
+var mongo_url='mongodb://localhost:27017';
 app.use(favicon(path.join(__dirname, '../client/app', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
+var MongoClient = require('mongodb').MongoClient;
 
 if ('development' == app.get('env')) {
     // This will change in production since we'll be using the dist folder
+//    app.get('/quotes', (req, res) => {
+//        console.log('Hellooooooooooooooooo!');
+//        res.send(200, 'working');
+//    });
+    app.post('/', (req, res) => {
+        var result=[];
+        MongoClient.connect(mongo_url+'/animals', function (err, db) {
+          if (err) throw err
+
+          db.collection('mammals').find().toArray(function (err, result2) {
+            if (err) throw err
+
+            res.send(result2);
+          });
+        });
+        //res.send(result);
+    });
     app.use(express.static(path.join(__dirname, 'dist')));
 
     // This is the new way to handle errors in Express 4. not errorHandler().
