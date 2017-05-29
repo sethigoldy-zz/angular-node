@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'mainController',
+    'todoService'
   ])
   .config(function ($routeProvider) {
     $routeProvider
