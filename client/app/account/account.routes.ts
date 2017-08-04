@@ -31,5 +31,11 @@ export default function routes($routeProvider) {
         controller: 'SettingsController',
         controllerAs: 'vm',
         authenticate: true
+      })
+      .when('/test', {              
+        template: require('./test/test.html'),
+        controller: 'TestController',
+        controllerAs: 'vm',
+        authenticate: true
       });
 }

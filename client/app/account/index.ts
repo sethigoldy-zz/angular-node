@@ -7,6 +7,7 @@ import routing from './account.routes';
 import login from './login';
 import settings from './settings';
 import signup from './signup';
+import test from './test';
 import oauthButtons from '../../components/oauth-buttons';
 
 export default angular.module('angularNodeApp.account', [
@@ -15,6 +16,7 @@ export default angular.module('angularNodeApp.account', [
     login,
     settings,
     signup,
+    test,
     oauthButtons
 ])
     .config(routing)

@@ -9,6 +9,9 @@ export class NavbarComponent {
   },{
     'title': 'Employee',
     'link': '/employee'
+  },{
+    'title': 'Test',
+    'link': '/test'
   }];
   $location;
   isLoggedIn: Function;
