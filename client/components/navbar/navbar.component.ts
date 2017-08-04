@@ -5,10 +5,10 @@ const angular = require('angular');
 export class NavbarComponent {
   menu = [{
     'title': 'Home',
-    'link': '/'
+    'link': '/employee'
   },{
-    'title': 'Foo',
-    'link': '/foo'
+    'title': 'Employee',
+    'link': '/employee'
   }];
   $location;
   isLoggedIn: Function;

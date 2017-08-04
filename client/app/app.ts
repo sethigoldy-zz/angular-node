@@ -23,8 +23,7 @@ import footer from '../components/footer/footer.component';
 import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
-import FooModule from './foo/foo.component';
-
+import EmployeeComponent from './employee/employee.component';
 
 import './app.scss';
 
@@ -45,7 +44,7 @@ angular.module('angularNodeApp', [
   footer,
   main,
   constants,
-  FooModule,
+  EmployeeComponent,
 
   util
 ])
