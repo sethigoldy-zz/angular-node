@@ -5,7 +5,7 @@ const angular = require('angular');
 export class NavbarComponent {
   menu = [{
     'title': 'Home',
-    'link': '/employee'
+    'link': '/'
   },{
     'title': 'Employee',
     'link': '/employee'
