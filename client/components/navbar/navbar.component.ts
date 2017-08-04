@@ -6,6 +6,9 @@ export class NavbarComponent {
   menu = [{
     'title': 'Home',
     'link': '/'
+  },{
+    'title': 'Foo',
+    'link': '/foo'
   }];
   $location;
   isLoggedIn: Function;
