@@ -7,6 +7,7 @@ interface User {
 }
 
 export default class TestController {
+    test = 'pj';
   user: User = {
     oldPassword: '',
     newPassword: '',

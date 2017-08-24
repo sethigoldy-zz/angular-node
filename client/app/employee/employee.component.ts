@@ -6,9 +6,11 @@ const ngRoute = require('angular-route');
 import routes from './employee.routes';
 
 export class EmployeeComponent {
+  test = 2 * 4;
+
   /*@ngInject*/
   constructor() {
-    
+
   }
 }
 
@@ -17,6 +19,6 @@ export default angular.module('angularNodeApp.employee', [ngRoute])
   .component('employee', {
     template: require('./employee.html'),
     controller: EmployeeComponent,
-    controllerAs: 'employeeCtrl'
+    controllerAs: 'ec'
   })
   .name;
